@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Art-Quiz</title>
+</head>
+<body>
+    <div class="wrapper">
+
+
+
+
+        <main class="main">
+            <div class="container">
+
+                <!-- ОСНОВНОЙ ЭКРАН -->
+                <div class="main__inner choise__treo__quiz" id="choise_treo">
+                    <div class="logo__main"></div>
+                    <div class="treo__quiz">
+                        <div class="card__treo toartcat">
+                            <div class="card__treo__img img__treo__artist"></div>
+                            <h2 class="card__treo__txt">
+                                <span class="treo__txt__bold">artists </span> 
+                                quiz
+                            </h2>
+                        </div>
+                        <div class="card__treo topictcat">
+                            <div class="card__treo__img img__treo__pictures"></div>
+                            <h2 class="card__treo__txt">
+                                <span class="treo__txt__bold">pictures </span> 
+                                quiz
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- КАТЕГОРИИ ПИСАТЕЛЕЙ -->
+                <div class="main__inner categories__artist hidden" id="cat_art" >
+                    <div class="logo__main logo__categories"></div>
+                    <div class="categories__btns">
+                        <button class="btns categories__btn btn__home">Home</button>
+                        <h2 class="categories__txt">categories</h2>
+                        <div class="plug"></div>
+                    </div>
+
+                    <div class="levels__quiz">
+                        <div class="card__categories card__art card__done" id="10">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Portrait</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img artists__img" style="background-image: url(assets/images/img/0.jpg);  filter:none">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="10">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__art"  id="20">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Landscape</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img artists__img" style="background-image: url(assets/images/img/10.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="20">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__art"  id="30">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Still Life</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img artists__img" style="background-image: url(assets/images/img/20.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="30">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__art"  id="40">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Graphic</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img artists__img" style="background-image: url(assets/images/img/30.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="40">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__art"  id="50">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Antique</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img artists__img" style="background-image: url(assets/images/img/40.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="50">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__art"  id="60">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Avant-Garde</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img artists__img" style="background-image: url(assets/images/img/50.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="60">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__art"  id="70">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Renaissance</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img artists__img" style="background-image: url(assets/images/img/60.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="70">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__art"  id="80">
+                            <div class="top__card__txt">
+                                <div class="card__logo">industrial</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img artists__img" style="background-image: url(assets/images/img/70.jpg);  filter:grayscale(100%)"> 
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="80">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__art"  id="90">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Surrealism</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img artists__img" style="background-image: url(assets/images/img/80.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="90">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__art"  id="100">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Kitsch</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img artists__img" style="background-image: url(assets/images/img/90.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="100">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__art" id="110">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Minimalism</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img artists__img"style="background-image: url(assets/images/img/100.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="110" >
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__art" id="120">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Avangard</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img artists__img" style="background-image: url(assets/images/img/110.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="120">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Рекорды вопросов о писателях -->
+                <div class="main__inner score__artist hidden" id="score_art" >
+                    <div class="logo__main logo__categories"></div>
+                    <div class="categories__btns">
+                        <button class="btns categories__btn btn__home">Home</button>
+                        <h2 class="categories__txt score">Score</h2>
+                        <div class="btns categories__btn btn__categories">Categories</div>
+                    </div>
+
+                    <div class="score__categories">
+                        <div class="card__categories card__record__art" id="1">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Portrait</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/0.jpg);  filter:none">
+                                <div class="info__score info__score__show">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="2">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Landscape</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/10.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="3">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Still Life</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/20.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="4">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Graphic</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/30.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="5">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Antique</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/40.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="6">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Avant-Garde</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/50.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="7">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Renaissance</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/60.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="8">
+                            <div class="top__card__txt">
+                                <div class="card__logo">industrial</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/70.jpg);  filter:grayscale(100%)"> 
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="9">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Surrealism</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/80.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="10">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Kitsch</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/90.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- КАТЕГОРИИ КАРТИН -->
+                <div class="main__inner categories__pictures hidden" id="cat_pic" >
+                    <div class="logo__main logo__categories"></div>
+                    <div class="categories__btns">
+                        <button class="btns categories__btn btn__home">Home</button>
+                        <h2 class="categories__txt">categories</h2>
+                        <div class="plug"></div>
+                    </div>
+
+                    <div class="levels__quiz">
+
+                        <div class="card__categories card__pic card__done" id="130">
+
+                            <div class="top__card__txt">
+                                <div class="card__logo">Portrait</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img pictures__img " style="background-image: url(assets/images/img/120.jpg);  filter:none">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="130">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="card__categories card__pic"  id="140">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Landscape</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img pictures__img" style="background-image: url(assets/images/img/130.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="140">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__pic"  id="150">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Still Life</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img pictures__img" style="background-image: url(assets/images/img/140.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="150">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__pic"  id="160">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Graphic</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img pictures__img" style="background-image: url(assets/images/img/150.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="160">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__pic"  id="170">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Antique</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img pictures__img" style="background-image: url(assets/images/img/160.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="170">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__pic"  id="180">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Avant-Garde</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img pictures__img" style="background-image: url(assets/images/img/170.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="180">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__pic"  id="190">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Renaissance</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img pictures__img" style="background-image: url(assets/images/img/180.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="190">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__pic"  id="200">
+                            <div class="top__card__txt">
+                                <div class="card__logo">industrial</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img pictures__img" style="background-image: url(assets/images/img/190.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="200">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__pic"  id="210">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Surrealism</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img pictures__img" style="background-image: url(assets/images/img/200.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="210">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__pic"  id="220">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Kitsch</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img pictures__img" style="background-image: url(assets/images/img/210.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="220">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__pic" id="230">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Minimalism</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img pictures__img" style="background-image: url(assets/images/img/220.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="230">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__pic" id="240">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Avangard</div>
+                                <div class="card__score">1</div>
+                            </div>
+                            <div class="card__img pictures__img" style="background-image: url(assets/images/img/230.jpg);  filter:grayscale(100%)">
+                                <div class="info__results">
+                                    <button class="btns btn__score" id="240">
+                                        score
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Рекорды вопросов о картинах -->
+                <div class="main__inner score__artist hidden" id="score_pic" >
+                    <div class="logo__main logo__categories"></div>
+                    <div class="categories__btns">
+                        <button class="btns categories__btn btn__home">Home</button>
+                        <h2 class="categories__txt score">Score</h2>
+                        <div class="btns categories__btn btn__categories">Categories</div>
+                    </div>
+
+                    <div class="score__categories">
+                        <div class="card__categories card__record__art" id="1">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Portrait</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/0.jpg);  filter:none">
+                                <div class="info__score info__score__show">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="2">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Landscape</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/10.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="3">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Still Life</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/20.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="4">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Graphic</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/30.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="5">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Antique</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/40.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="6">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Avant-Garde</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/50.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="7">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Renaissance</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/60.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="8">
+                            <div class="top__card__txt">
+                                <div class="card__logo">industrial</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/70.jpg);  filter:grayscale(100%)"> 
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="9">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Surrealism</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/80.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__categories card__record__art"  id="10">
+                            <div class="top__card__txt">
+                                <div class="card__logo">Kitsch</div>
+                            </div>
+                            <div class="card__img artists__record__img" style="background-image: url(assets/images/img/90.jpg);  filter:grayscale(100%)">
+                                <div class="info__score">
+                                    <div class="text__score text__name"></div>
+                                    <div class="text__score text__author"></div>
+                                    <div class="text__score text__year"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ЭКРАН С ВОПРОСОМ о ПИСАТЕЛЯХ -->
+                <div class="main__inner question__art hidden" id="quest_art" >
+                    <div class="categories__btns">
+                        <button class="btns categories__btn btn__home">Home</button>
+                        <h2 class="question__txt">Кто автор данной картины?</h2>
+                        <div class="btns categories__btn btn__categories">Categories</div>
+                    </div>
+                    <div class="question__art__inner">
+                        <div class="question__art__img">
+                            <div class="pagination">
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                            </div>
+                        </div>
+                        <ul class="answers__art">
+                            <li class="answer__art" id="1">ДЖОВАННИ БЕЛЛИНИ</li>
+                            <li class="answer__art" id="2">ПЬЕР ОПОСТ РЕНУАР</li>
+                            <li class="answer__art" id="3">Павел Федотов</li>
+                            <li class="answer__art" id="4">Веласкес</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ПОПАПИЩЕ -->
+                <div class="popup">
+                    <div class="overlay"></div>
+                    <div class="popup__inner">
+                        <div class="popup__answer popup__answer__correct"></div>
+                        <div class="popup__picture"></div>
+                        <h2 class="text__popup popup__picture__name"></h2>
+                        <div class="text__popup popup__picture__author"></div>
+                        <div class="text__popup popup__picture__year"></div>
+                        <button class="btns popup__button">Next</button>
+                    </div>
+                </div>
+
+                <!-- ЭКРАН С ВОПРОСОМ О КАРТИНАХ -->
+                <div class="main__inner question__pic hidden" id="quest_pic">
+                    <div class="categories__btns">
+                        <button class="btns categories__btn btn__home">Home</button>
+                        <h2 class="question__txt">Какую картину написал Альбрехт Дюрер?</h2>
+                        <div class="btns categories__btn btn__categories">Categories</div>
+                    </div>
+                    <div class="question__pic__inner">
+                        <div class="question__pic__img" id="1" style="background-image: url(assets/images/full/120full.jpg);"></div>
+                        <div class="question__pic__img" id="2" style="background-image: url(assets/images/full/121full.jpg);"></div>
+                        <div class="question__pic__img" id="3" style="background-image: url(assets/images/full/122full.jpg);"></div>
+                        <div class="question__pic__img" id="4" style="background-image: url(assets/images/full/123full.jpg);"></div>
+                            <div class="pagination">
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                                <div class="pagination__item pagination__item__null"></div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+
+
+
+
+
+
+        <footer class="footer">
+
+        </footer>
+    </div>
+    <script type="module" src="assets/js/images.js"></script>
+    <script type="module" src="assets/js/script__questions__actor.js"></script>
+    <script type="module" src="assets/js/script__questions__pictures.js"></script>
+    <script type="module" src="assets/js/script__score.js"></script>
+    <script src="assets/js/script__change__content.js"></script>
+</body>
+</html>
