@@ -1,34 +1,34 @@
-import images from "./images.js";
+import {images} from "./images.js";
+import { btns_score, idScoreBtn } from "./script__change__content.js";
+import { changeImages, correct_answers } from "./script__questions__actor.js";
 
 var cards_record_art = document.querySelectorAll('.card__record__art');
-var artists_record_imgs = document.querySelectorAll('.artists__record__img');
+export var artists_record_imgs = document.querySelectorAll('.artists__record__img');
+
+//Доп информация в рекордах
 var infos_score = document.querySelectorAll('.info__score');
 var texts_name = document.querySelectorAll('.text__name');
 var texts_author = document.querySelectorAll('.text__author');
 var texts_year = document.querySelectorAll('.text__year');
-var new_array_images;
+
+//Доп переменные
 var step = 0;
-
-
-var changeImages = function(idel){
-    var newImages = [];
-    var j = 0;
-    for(var i = idel-10;i<idel;i++){
-        newImages[j] = images[i];
-        j++;
-    }
-    return newImages;
-} 
+var new_array_images;
 
 // Функция кнопок score
 btns_score.forEach((btn_score) => {
     btn_score.addEventListener('click', function(){
-        for(var i = idScoreBtn - 10; i <= idScoreBtn; i++){
-            new_array_images = changeImages(idScoreBtn);
-            artists_record_imgs[step].style.backgroundImage = "url('assets/images/full/"+new_array_images[i]['imageNum']+"full.jpg')";
-            texts_name[step].textContent = new_array_images[i]['name'];
-            texts_author[step].textContent = new_array_images[i]['author'];
-            texts_year[step].textContent = new_array_images[i]['year'];
+        new_array_images = changeImages(idScoreBtn);
+        for(var i = idScoreBtn - 10; i < idScoreBtn; i++){
+            if(correct_answers[i] == true){
+                artists_record_imgs[step].style.filter = "none";
+            }else{
+                artists_record_imgs[step].style.filter = "grayscale(100%)";
+            }
+            artists_record_imgs[step].style.backgroundImage = "url('assets/images/full/"+images[i]['imageNum']+"full.jpg')";
+            texts_name[step].textContent = images[i]['name'];
+            texts_author[step].textContent = images[i]['author'];
+            texts_year[step].textContent = images[i]['year'];
             step++
         }
     });

@@ -6,10 +6,10 @@ var to_pic_cat = document.querySelector(".topictcat");
 //кнопка на экранах с уровнями
 var btns_home = document.querySelectorAll(".btn__home");
 var btns_categories = document.querySelectorAll(".btn__categories");
-var btns_score = document.querySelectorAll(".btn__score");
+export var btns_score = document.querySelectorAll(".btn__score");
 
 // Экраны
-var main_screen = document.querySelector(".container");//Основной контейнер
+export var main_screen = document.querySelector(".container");//Основной контейнер
 var choise_treo = document.getElementById('choise_treo');//Основной экран
 var cat_art = document.getElementById('cat_art');//Экран с категорией писателями
 var cat_pic = document.getElementById('cat_pic');//Экран с категорией картинами
@@ -17,11 +17,11 @@ var score_art = document.getElementById('score_art');//Экран с рекор�
 var score_pic = document.getElementById('score_pic');//Экран с рекордами с картинами
 var quest_art = document.getElementById('quest_art');//Экран с вопросом о писателях
 var quest_pic = document.getElementById('quest_pic');//Экран с вопросом о картинах
-var cards_done_art = document.getElementsByClassName('card__art card__done');//Доступные категории с писателями
-var cards_done_pic = document.getElementsByClassName('card__pic card__done');//Доступные категории с картинами
+export var cards_done_art = document.getElementsByClassName('card__art card__done');//Доступные категории с писателями
+export var cards_done_pic = document.getElementsByClassName('card__pic card__done');//Доступные категории с картинами
 //Остальные переменные
-var idScoreBtn;//id нажатой кнопки score
-var idBtn;//id нажатой кнопки
+export var idScoreBtn;//id нажатой кнопки score
+export var idBtn;//id нажатой кнопки
 
 //Функция смены экранов
 function togglehidden(first, second){

@@ -1,2 +1,2 @@
-import images from "./images.js";
+import {images} from "./images.js";
 
