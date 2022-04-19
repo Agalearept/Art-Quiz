@@ -1,3 +1,4 @@
+
 // КНОПКИ
 //кнопки на основном экране
 var art_cat = document.querySelector(".categories__artist");
@@ -98,9 +99,10 @@ btns_categories.forEach((btn_categories)=>{
 //Вопросы писателей
 for (let card_done_art of cards_done_art) {
     card_done_art.addEventListener('click', function(e){
+        idBtn = 0;
         main_screen.style.left = '-2000px';
         setTimeout(() => togglehidden(cat_art, quest_art), 1000); 
-        idBtn = card_done_art.id;
+        idBtn = parseInt(card_done_art.id);
     });
 }
 //Вопросы картин
@@ -117,6 +119,7 @@ btns_score.forEach((btn_score)=>{
     btn_score.addEventListener('click', function(){
         idScoreBtn = btn_score.id;
         main_screen.style.left = '-2000px';
+        
         if(idScoreBtn<=120){
             setTimeout(() => togglehidden(cat_art, score_art), 1000);
             setTimeout(() => togglehidden(cat_art, quest_art), 1000); 

@@ -27,16 +27,7 @@ for(var i=0;i<images.length;i++){
     correct_answers[i] = false;
 }
 
-//Получение Нужных элементов из массива
-export var changeImages = function(idel){
-    var newImages = [];
-    var j = 0;
-    for(var i = idel-10;i<idel;i++){
-        newImages[j] = images[i];
-        j++;
-    }
-    return newImages;
-}
+
 
 // Выбор случайного ответа
 export function getRandomInt() {
@@ -48,6 +39,7 @@ export function changeQuestion(idQuestion){
     var j = 0;//Счетчик ответов
     var i = getRandomInt();//Выбор правильного номера ответа
     art_img.style.backgroundImage = "url('assets/images/full/"+images[idQuestion]['imageNum']+"full.jpg')";
+    console.log(images[idQuestion]['imageNum']);
     answers_art.forEach((answer_art)=>{
         if(i==j){
             answer_art.textContent = images[idQuestion]['author'];
@@ -74,12 +66,22 @@ export var getMeRandomElements = function(sourceArray, neededElements) {
 //Функция первого появления вопроса
 for (let card_done_art of cards_done_art) {
     card_done_art.addEventListener('click', function(){
+        for(var i = 0; i<=10;i++)
+        {
+            pagination_items[i].classList.remove("pagination__item__correct");
+            pagination_items[i].classList.remove("pagination__item__incorrect")
+            pagination_items[i].classList.add("pagination__item__null")
+            
+        }
         var res = getMeRandomElements(images, 4);
-        new_array_images = changeImages(idBtn);
-        questions_art = idBtn-10;
+        console.log(parseInt(idBtn));//ПЕРВЫЙ ВЫВОД
+        questions_art = parseInt(idBtn)-10;
+        console.log(questions_art);//ВТОРОЙ ВЫВОД
         var j = 0;//Счетчик ответов
         var i = getRandomInt();//Выбор правильного номера ответа
+        console.log(images[questions_art]['imageNum']);//ТРЕТИЙ ВЫВОД
         art_img.style.backgroundImage = "url('assets/images/full/"+images[questions_art]['imageNum']+"full.jpg')";
+
         answers_art.forEach((answer_art)=>{
             if(i==j){
                 answer_art.textContent = images[questions_art]['author'];
@@ -112,15 +114,13 @@ answers_art.forEach((answer_art)=>{
         if(answer_art.textContent==images[questions_art]['author']){
             flag = true;
             correct_answers[images[questions_art]['imageNum']]=true;
-            pagination_items[questions_art+10-idBtn].classList.replace("pagination__item__null", "pagination__item__correct");
-            pagination_items[questions_art+10-idBtn].classList.replace("pagination__item__incorrect", "pagination__item__correct")
-            showPopup(flag);
+            pagination_items[questions_art+10-parseInt(idBtn)].classList.replace("pagination__item__null", "pagination__item__correct");
+            pagination_items[questions_art+10-parseInt(idBtn)].classList.replace("pagination__item__incorrect", "pagination__item__correct")
         }else{
             flag = false;
-            pagination_items[questions_art+10-idBtn].classList.replace("pagination__item__null", "pagination__item__incorrect")
-            showPopup(flag);
+            pagination_items[questions_art+10-parseInt(idBtn)].classList.replace("pagination__item__null", "pagination__item__incorrect")
         }
-        
+        showPopup(flag);
     });
 })
 
@@ -134,6 +134,5 @@ popup_button.addEventListener('click', function(){
     main_screen.style.left = '-2000px';
     popup_inner.classList.remove('popup__show');
     setTimeout(() => changeQuestion(questions_art), 1000)
-    questions_art++;
 });
 
