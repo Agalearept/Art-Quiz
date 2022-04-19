@@ -1,31 +1,32 @@
-
 // КНОПКИ
 //кнопки на основном экране
-var art_cat = document.querySelector(".categories__artist");
-var to_art_cat = document.querySelector(".toartcat");
-var to_pic_cat = document.querySelector(".topictcat");
+let art_cat = document.querySelector(".categories__artist");
+let to_art_cat = document.querySelector(".toartcat");
+let to_pic_cat = document.querySelector(".topictcat");
 //кнопка на экранах с уровнями
-var btns_home = document.querySelectorAll(".btn__home");
-var btns_categories = document.querySelectorAll(".btn__categories");
-export var btns_score = document.querySelectorAll(".btn__score");
+let btns_home = document.querySelectorAll(".btn__home");
+let btns_categories = document.querySelectorAll(".btn__categories");
+export let btns_score = document.querySelectorAll(".btn__score");
 
 // Экраны
-export var main_screen = document.querySelector(".container");//Основной контейнер
-var choise_treo = document.getElementById('choise_treo');//Основной экран
-var cat_art = document.getElementById('cat_art');//Экран с категорией писателями
-var cat_pic = document.getElementById('cat_pic');//Экран с категорией картинами
-var score_art = document.getElementById('score_art');//Экран с рекордами писателя
-var score_pic = document.getElementById('score_pic');//Экран с рекордами с картинами
-var quest_art = document.getElementById('quest_art');//Экран с вопросом о писателях
-var quest_pic = document.getElementById('quest_pic');//Экран с вопросом о картинах
-export var cards_done_art = document.getElementsByClassName('card__art card__done');//Доступные категории с писателями
-export var cards_done_pic = document.getElementsByClassName('card__pic card__done');//Доступные категории с картинами
-//Остальные переменные
-export var idScoreBtn;//id нажатой кнопки score
-export var idBtn;//id нажатой кнопки
+export let main_screen = document.querySelector(".container");//Основной контейнер
+let choise_treo = document.getElementById('choise_treo');//Основной экран
+let cat_art = document.getElementById('cat_art');//Экран с категорией писателями
+let cat_pic = document.getElementById('cat_pic');//Экран с категорией картинами
+let score_art = document.getElementById('score_art');//Экран с рекордами писателя
+let score_pic = document.getElementById('score_pic');//Экран с рекордами с картинами
+let quest_art = document.getElementById('quest_art');//Экран с вопросом о писателях
+let quest_pic = document.getElementById('quest_pic');//Экран с вопросом о картинах
+export let cards_done_art = document.getElementsByClassName('card__art');//Доступные категории с писателями
+export let cards_done_pic = document.getElementsByClassName('card__pic card__done');//Доступные категории с картинами
+
+//Остальне переменные
+
+export let idScoreBtn;//id нажатой кнопки score
+export let idBtn;//id нажатой кнопки
 
 //Функция смены экранов
-function togglehidden(first, second){
+export function togglehidden(first, second){
     first.classList.toggle("hidden"); 
     second.classList.toggle("hidden");
     main_screen.style.left = '0';
@@ -98,11 +99,12 @@ btns_categories.forEach((btn_categories)=>{
 //Функции кнопок выбора пака вопросов
 //Вопросы писателей
 for (let card_done_art of cards_done_art) {
-    card_done_art.addEventListener('click', function(e){
-        idBtn = 0;
-        main_screen.style.left = '-2000px';
-        setTimeout(() => togglehidden(cat_art, quest_art), 1000); 
-        idBtn = parseInt(card_done_art.id);
+    card_done_art.addEventListener('click', function(){
+        if(card_done_art.classList.contains('card__done')){
+            main_screen.style.left = '-2000px';
+            setTimeout(() => togglehidden(cat_art, quest_art), 1000); 
+            idBtn = parseInt(card_done_art.id);
+        }
     });
 }
 //Вопросы картин
@@ -110,7 +112,7 @@ for (let card_done_pic of cards_done_pic) {
     card_done_pic.addEventListener('click', function(){
         main_screen.style.left = '-2000px';
         setTimeout(() => togglehidden(cat_pic, quest_pic), 1000);
-        idBtn = card_done_pic.id;
+        idBtn = parseInt(card_done_pic.id);
     });
 }
 
@@ -129,3 +131,4 @@ btns_score.forEach((btn_score)=>{
         }
     });
 })
+
