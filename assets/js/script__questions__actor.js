@@ -57,8 +57,12 @@ export var getMeRandomElements = function(sourceArray, neededElements) {
     var result = [];
     for (var i = 0; i < neededElements; i++) {
     var index = Math.floor(Math.random() * sourceArray.length);
-        result.push(sourceArray[index]);
-        sourceArray.splice(index, 1);
+        if(index==questions_art){
+            i--;
+        }else{
+            result.push(sourceArray[index]);
+        }
+        
     }
     return result;
 }
@@ -74,12 +78,9 @@ for (let card_done_art of cards_done_art) {
             
         }
         var res = getMeRandomElements(images, 4);
-        console.log(parseInt(idBtn));//ПЕРВЫЙ ВЫВОД
         questions_art = parseInt(idBtn)-10;
-        console.log(questions_art);//ВТОРОЙ ВЫВОД
         var j = 0;//Счетчик ответов
         var i = getRandomInt();//Выбор правильного номера ответа
-        console.log(images[questions_art]['imageNum']);//ТРЕТИЙ ВЫВОД
         art_img.style.backgroundImage = "url('assets/images/full/"+images[questions_art]['imageNum']+"full.jpg')";
 
         answers_art.forEach((answer_art)=>{
@@ -134,5 +135,6 @@ popup_button.addEventListener('click', function(){
     main_screen.style.left = '-2000px';
     popup_inner.classList.remove('popup__show');
     setTimeout(() => changeQuestion(questions_art), 1000)
+    questions_art++;
 });
 
