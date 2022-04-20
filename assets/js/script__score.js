@@ -2,6 +2,7 @@ import {images} from "./images.js";
 import { btns_score, idScoreBtn } from "./script__change__content.js";
 import { correct_answers } from "./script__questions__actor.js";
 
+//Картинки в рекордах
 let cards_record_art = document.querySelectorAll('.card__record__art');
 export let artists_record_imgs = document.querySelectorAll('.artists__record__img');
 
@@ -10,8 +11,6 @@ let infos_score = document.querySelectorAll('.info__score');
 let texts_name = document.querySelectorAll('.text__name');
 let texts_author = document.querySelectorAll('.text__author');
 let texts_year = document.querySelectorAll('.text__year');
-
-//Доп переменные
 
 // Функция кнопок score
 btns_score.forEach((btn_score) => {
@@ -33,7 +32,7 @@ btns_score.forEach((btn_score) => {
     });
 })
 
-
+//Показ доп информации по картинке
 cards_record_art.forEach((card_record_art) => {
     card_record_art.addEventListener('click', function(){
         infos_score[card_record_art.id-1].classList.toggle('info__score__show');

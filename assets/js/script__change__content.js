@@ -14,14 +14,12 @@ let choise_treo = document.getElementById('choise_treo');//Основной эк
 let cat_art = document.getElementById('cat_art');//Экран с категорией писателями
 let cat_pic = document.getElementById('cat_pic');//Экран с категорией картинами
 let score_art = document.getElementById('score_art');//Экран с рекордами писателя
-let score_pic = document.getElementById('score_pic');//Экран с рекордами с картинами
 let quest_art = document.getElementById('quest_art');//Экран с вопросом о писателях
 let quest_pic = document.getElementById('quest_pic');//Экран с вопросом о картинах
 export let cards_done_art = document.getElementsByClassName('card__art');//Доступные категории с писателями
 export let cards_done_pic = document.getElementsByClassName('card__pic card__done');//Доступные категории с картинами
 
 //Остальне переменные
-
 export let idScoreBtn;//id нажатой кнопки score
 export let idBtn;//id нажатой кнопки
 
@@ -77,11 +75,7 @@ btns_categories.forEach((btn_categories)=>{
         main_screen.style.left = '-2000px';
         if(quest_pic.classList.contains("hidden")
             && quest_art.classList.contains("hidden")){
-                if(idScoreBtn<=120){
-                    setTimeout(() => togglehidden(score_art, cat_art), 1000);
-                }else{
-                    setTimeout(() => togglehidden(score_art, cat_pic), 1000);
-                }
+                setTimeout(() => togglehidden(score_art, cat_art), 1000);
         }else if(quest_pic.classList.contains("hidden")){
             setTimeout(() => togglehidden(cat_art, quest_art), 1000);
         }
