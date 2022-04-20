@@ -19,8 +19,6 @@ btns_score.forEach((btn_score) => {
         var step = 0;
         var i = 0;
         for(i = idScoreBtn - 10; i < idScoreBtn; i++){
-            console.log('i = '+i);
-            console.log('id picture = '+images[i]['imageNum']);
             if(correct_answers[i] == true){
                 artists_record_imgs[step].style.filter = "none";
             }else{

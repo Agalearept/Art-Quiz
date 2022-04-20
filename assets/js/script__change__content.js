@@ -53,11 +53,7 @@ btns_home.forEach((btn_home)=>{
             && cat_pic.classList.contains("hidden")
                 && quest_art.classList.contains("hidden")
                     &&quest_pic.classList.contains("hidden")){
-                        if(idScoreBtn<=120){
                             setTimeout(() => togglehidden(score_art, choise_treo), 1000);
-                        }else{
-                            setTimeout(() => togglehidden(score_pic, choise_treo), 1000);
-                        }
         }else if(cat_art.classList.contains("hidden") 
             && cat_pic.classList.contains("hidden")){
                 if(quest_art.classList.contains("hidden")){
