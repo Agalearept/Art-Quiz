@@ -75,7 +75,11 @@ btns_categories.forEach((btn_categories)=>{
         main_screen.style.left = '-2000px';
         if(quest_pic.classList.contains("hidden")
             && quest_art.classList.contains("hidden")){
-                setTimeout(() => togglehidden(score_art, cat_art), 1000);
+                if(idScoreBtn<=120){
+                    setTimeout(() => togglehidden(score_art, cat_art), 1000);
+                }else{
+                    setTimeout(() => togglehidden(score_art, cat_pic), 1000);
+                }
         }else if(quest_pic.classList.contains("hidden")){
             setTimeout(() => togglehidden(cat_art, quest_art), 1000);
         }
