@@ -643,6 +643,10 @@ body{
       height: 350px;
    }
    .answer__art{
-      font-size: 20px;
+      font-size: 15px;
+      line-height: 1;
+   }
+   .card__done .info__results{
+      bottom: -71px;
    }
 }
