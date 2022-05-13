@@ -4,7 +4,8 @@
   "description": "Коллекция из 240 шедевров живописи.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development"
+    "dev": "webpack --mode development",
+  "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
