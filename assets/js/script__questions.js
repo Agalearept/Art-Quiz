@@ -75,9 +75,9 @@ export function changeQuestionpic(idQuestion){
     question_txt.innerHTML = "Какую картину написал "+images[idQuestion]['author']+"?";
     answers_img.forEach((answer_img)=>{
         if(i==j){
-            answer_img.style.backgroundImage = "assets/url('images/full/"+images[idQuestion]['imageNum']+"full.jpg')";
+            answer_img.style.backgroundImage = "url('assets/images/full/"+images[idQuestion]['imageNum']+"full.jpg')";
         }else{
-            answer_img.style.backgroundImage = "assets/url('images/full/"+res[j]['imageNum']+"full.jpg')";
+            answer_img.style.backgroundImage = "url('assets/images/full/"+res[j]['imageNum']+"full.jpg')";
         }
         j++
     })
