@@ -132,7 +132,7 @@ for (let card_done_pic of cards_done_pic) {
     
     card_done_pic.addEventListener('click', function(){
         chosen_card_pic = parseInt(card_done_pic.id);
-        for(var i = 0; i<=10;i++)
+        for(var i = 10; i<20;i++)
         {
             pagination_items[i].classList.remove("pagination__item__correct");
             pagination_items[i].classList.remove("pagination__item__incorrect")

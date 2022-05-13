@@ -17,7 +17,7 @@ let score_art = document.getElementById('score_art');//Экран с рекор�
 let quest_art = document.getElementById('quest_art');//Экран с вопросом о писателях
 let quest_pic = document.getElementById('quest_pic');//Экран с вопросом о картинах
 export let cards_done_art = document.getElementsByClassName('card__art');//Доступные категории с писателями
-export let cards_done_pic = document.getElementsByClassName('card__pic card__done');//Доступные категории с картинами
+export let cards_done_pic = document.getElementsByClassName('card__pic');//Доступные категории с картинами
 
 //Остальне переменные
 export let idScoreBtn;//id нажатой кнопки score
@@ -104,9 +104,11 @@ for (let card_done_art of cards_done_art) {
 //Вопросы картин
 for (let card_done_pic of cards_done_pic) {
     card_done_pic.addEventListener('click', function(){
-        main_screen.style.left = '-2000px';
-        setTimeout(() => togglehidden(cat_pic, quest_pic), 1000);
-        idBtn = parseInt(card_done_pic.id);
+        if(card_done_pic.classList.contains('card__done')){
+            main_screen.style.left = '-2000px';
+            setTimeout(() => togglehidden(cat_pic, quest_pic), 1000);
+            idBtn = parseInt(card_done_pic.id);
+        }
     });
 }
 
