@@ -15,8 +15,8 @@ let texts_year = document.querySelectorAll('.text__year');
 // Функция кнопок score
 btns_score.forEach((btn_score) => {
     btn_score.addEventListener('click', function(){
-        var step = 0;
-        var i = 0;
+        let step = 0;
+        let i = 0;
         for(i = idScoreBtn - 10; i < idScoreBtn; i++){
             if(correct_answers[i] == true){
                 artists_record_imgs[step].style.filter = "none";
