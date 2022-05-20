@@ -52,7 +52,7 @@ export function changeQuestion(idQuestion){
     var res = getMeRandomElements(images, 4);
     var j = 0;//Счетчик ответов
     var i = getRandomInt();//Выбор правильного номера ответа
-    art_img.style.backgroundImage = "url('assets/images/full/"+images[idQuestion]['imageNum']+"full.jpg')";
+    art_img.style.backgroundImage = "url('src/images/full/"+images[idQuestion]['imageNum']+"full.jpg')";
     answers_art.forEach((answer_art)=>{
         if(i==j){
             answer_art.textContent = images[idQuestion]['author'];
@@ -75,9 +75,9 @@ export function changeQuestionpic(idQuestion){
     question_txt.innerHTML = "Какую картину написал "+images[idQuestion]['author']+"?";
     answers_img.forEach((answer_img)=>{
         if(i==j){
-            answer_img.style.backgroundImage = "url('assets/images/full/"+images[idQuestion]['imageNum']+"full.jpg')";
+            answer_img.style.backgroundImage = "url('src/images/full/"+images[idQuestion]['imageNum']+"full.jpg')";
         }else{
-            answer_img.style.backgroundImage = "url('assets/images/full/"+res[j]['imageNum']+"full.jpg')";
+            answer_img.style.backgroundImage = "url('src/images/full/"+res[j]['imageNum']+"full.jpg')";
         }
         j++
     })
@@ -115,7 +115,7 @@ for (let card_done_art of cards_done_art) {
         questions_art = parseInt(idBtn)-10;
         var j = 0;//Счетчик ответов
         var i = getRandomInt();//Выбор правильного номера ответа
-        art_img.style.backgroundImage = "url('assets/images/full/"+images[questions_art]['imageNum']+"full.jpg')";
+        art_img.style.backgroundImage = "url('src/images/full/"+images[questions_art]['imageNum']+"full.jpg')";
 
         answers_art.forEach((answer_art)=>{
             if(i==j){
@@ -147,9 +147,9 @@ for (let card_done_pic of cards_done_pic) {
         question_txt.innerHTML ="Какую картину написал "+images[questions_pic]['author']+"?";
         answers_img.forEach((answer_img)=>{
             if(i==j){
-                answer_img.style.backgroundImage = "url('assets/images/full/"+images[questions_pic]['imageNum']+"full.jpg')";
+                answer_img.style.backgroundImage = "url('src/images/full/"+images[questions_pic]['imageNum']+"full.jpg')";
             }else{
-                answer_img.style.backgroundImage = "url('assets/images/full/"+res[j]['imageNum']+"full.jpg')";
+                answer_img.style.backgroundImage = "url('src/images/full/"+res[j]['imageNum']+"full.jpg')";
             }
             j++
         })
@@ -165,14 +165,14 @@ export function showPopup(flag){
     }
     //Функция появления Попапа для писателей
     if(idBtn<=120){
-        popup_picture.style.backgroundImage = "url('assets/images/full/"+images[questions_art]['imageNum']+"full.jpg')";
+        popup_picture.style.backgroundImage = "url('src/images/full/"+images[questions_art]['imageNum']+"full.jpg')";
         popup_picture_name.textContent = images[questions_art]['name'];
         popup_picture_author.textContent = images[questions_art]['author'];
         popup_picture_year.textContent = images[questions_art]['year'];
         overlay_popup.classList.add('overlay__show')
         popup_inner.classList.add('popup__show')
     }else{//Функция появления Попапа для картин
-        popup_picture.style.backgroundImage = "url('assets/images/full/"+images[questions_pic]['imageNum']+"full.jpg')";
+        popup_picture.style.backgroundImage = "url('src/images/full/"+images[questions_pic]['imageNum']+"full.jpg')";
         popup_picture_name.textContent = images[questions_pic]['name'];
         popup_picture_author.textContent = images[questions_pic]['author'];
         popup_picture_year.textContent = images[questions_pic]['year'];

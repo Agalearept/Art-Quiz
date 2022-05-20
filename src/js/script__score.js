@@ -23,7 +23,7 @@ btns_score.forEach((btn_score) => {
             }else{
                 artists_record_imgs[step].style.filter = "grayscale(100%)";
             }
-            artists_record_imgs[step].style.backgroundImage = "url('assets/images/full/"+images[i]['imageNum']+"full.jpg')";
+            artists_record_imgs[step].style.backgroundImage = "url('src/images/full/"+images[i]['imageNum']+"full.jpg')";
             texts_name[step].textContent = images[i]['name'];
             texts_author[step].textContent = images[i]['author'];
             texts_year[step].textContent = images[i]['year'];
