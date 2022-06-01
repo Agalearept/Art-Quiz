@@ -33,6 +33,7 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
+    "node-localstorage": "^2.2.1",
     "url-loader": "^4.1.1"
   }
 }
