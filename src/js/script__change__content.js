@@ -30,6 +30,10 @@ export function togglehidden(first, second){
     main_screen.style.left = '0';
 }
 
+export function enableCardsArt(){
+    
+}
+
 // Функция кнопки с писателями
 to_art_cat.addEventListener('click', function(){
     main_screen.style.left = '-2000px';

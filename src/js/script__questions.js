@@ -1,15 +1,15 @@
 import {images} from "./images.js";
 import {cards_done_art, cards_done_pic, idBtn, main_screen, togglehidden} from "./script__change__content.js";
 
-let art_img = document.querySelector('.question__art__img');//Картинка вопрос для писателей
+export let art_img = document.querySelector('.question__art__img');//Картинка вопрос для писателей
 export let question_txt = document.getElementById('question__txt');//Текст вопрос для картин
 
-let answers_art = document.querySelectorAll('.answer__art');//Ответы текст для писателей
+export let answers_art = document.querySelectorAll('.answer__art');//Ответы текст для писателей
 export let answers_img = document.querySelectorAll('.question__pic__img');//Ответ картинки для картин
 
 export let pagination_items = document.querySelectorAll('.pagination__item');//Кружки ответов
 
-let cards_art = document.getElementsByClassName('card__art');//Доступные категории с картинами
+export let cards_art = document.getElementsByClassName('card__art');//Доступные категории с картинами
 export let cards_pic = document.getElementsByClassName('card__pic');//Доступные категории с картинами
 
 export let cards_score = document.querySelectorAll('.card__score');//Рекорд в уровне
