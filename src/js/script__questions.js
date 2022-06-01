@@ -28,16 +28,21 @@ export let popup_button = document.querySelector('.popup__button');
 //Вспомогательны переменные
 export let questions_art;//Количество вопросов для писателей
 export let questions_pic;//Количество вопросов для картин
-export let correct_answers = [];//Количество правильных ответов
+let mas = [];
+//Формирование массива с ответами
+for(let i=0;i<images.length;i++){
+    mas[i] = false;
+}
+export let correct_answers = localStorage.getItem('correctAns') ? JSON.parse(localStorage.getItem('correctAns')) : [];//Количество правильных ответов
+localStorage.setItem('correctAns', JSON.stringify(correct_answers));
+export let correctAnswers = JSON.parse(localStorage.getItem('correctAns'));
+
 let flag = 0;//Правильный ответ либо нет
 export let new_array_images;//Новый массив картинок
 export let chosen_card_art;//Выбранный уровень для писателей
 export let chosen_card_pic;//выбранный уровень для картин
 
-//Формирование массива с ответами
-for(let i=0;i<images.length;i++){
-    correct_answers[i] = false;
-}
+
 
 
 
@@ -186,8 +191,9 @@ answers_art.forEach((answer_art)=>{
     answer_art.addEventListener('click', function(){
         if(answer_art.textContent==images[questions_art]['author']){
             flag = true;
-            if(correct_answers[images[questions_art]['imageNum']] != true){
-                correct_answers[images[questions_art]['imageNum']] = true;
+            if(correctAnswers[images[questions_art]['imageNum']] != true){
+                correctAnswers[images[questions_art]['imageNum']] = true;
+                localStorage.setItem('correctAns', JSON.stringify(correctAnswers));
                 cards_score[idBtn/10-1].textContent = parseInt(cards_score[idBtn/10-1].textContent)+1;
 
             }
@@ -215,6 +221,9 @@ answers_img.forEach((answer_pic)=>{
             pagination_items[questions_pic+20-parseInt(idBtn)].classList.replace("pagination__item__incorrect", "pagination__item__correct")
         }else{
             flag = false;
+            if(correct_answers[images[questions_pic]['imageNum']] != true){
+                correct_answers[images[questions_pic]['imageNum']] = false;
+            }
             pagination_items[questions_pic+20-parseInt(idBtn)].classList.replace("pagination__item__null", "pagination__item__incorrect")
         }
         showPopup(flag);
