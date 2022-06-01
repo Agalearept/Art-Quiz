@@ -1,4 +1,6 @@
-
+import {images} from "./images.js";
+import { btns_score, idScoreBtn } from "./script__change__content.js";
+import { correct_answers } from "./script__questions.js";
 
 //Картинки в рекордах
 let cards_record_art = document.querySelectorAll('.card__record__art');
@@ -13,15 +15,15 @@ let texts_year = document.querySelectorAll('.text__year');
 // Функция кнопок score
 btns_score.forEach((btn_score) => {
     btn_score.addEventListener('click', function(){
-        var step = 0;
-        var i = 0;
+        let step = 0;
+        let i = 0;
         for(i = idScoreBtn - 10; i < idScoreBtn; i++){
             if(correct_answers[i] == true){
                 artists_record_imgs[step].style.filter = "none";
             }else{
                 artists_record_imgs[step].style.filter = "grayscale(100%)";
             }
-            artists_record_imgs[step].style.backgroundImage = "url('assets/images/full/"+images[i]['imageNum']+"full.jpg')";
+            artists_record_imgs[step].style.backgroundImage = "url('src/images/full/"+images[i]['imageNum']+"full.jpg')";
             texts_name[step].textContent = images[i]['name'];
             texts_author[step].textContent = images[i]['author'];
             texts_year[step].textContent = images[i]['year'];

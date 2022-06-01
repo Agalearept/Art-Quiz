@@ -1,5 +1,5 @@
-
-
+import {images} from "./images.js";
+import {cards_done_art, cards_done_pic, idBtn, main_screen, togglehidden} from "./script__change__content.js";
 
 let art_img = document.querySelector('.question__art__img');//Картинка вопрос для писателей
 export let question_txt = document.getElementById('question__txt');//Текст вопрос для картин
@@ -35,7 +35,7 @@ export let chosen_card_art;//Выбранный уровень для писат
 export let chosen_card_pic;//выбранный уровень для картин
 
 //Формирование массива с ответами
-for(var i=0;i<images.length;i++){
+for(let i=0;i<images.length;i++){
     correct_answers[i] = false;
 }
 
@@ -49,10 +49,10 @@ export function getRandomInt() {
 
 //Функция смены вопроса для писателей
 export function changeQuestion(idQuestion){
-    var res = getMeRandomElements(images, 4);
-    var j = 0;//Счетчик ответов
-    var i = getRandomInt();//Выбор правильного номера ответа
-    art_img.style.backgroundImage = "url('assets/images/full/"+images[idQuestion]['imageNum']+"full.jpg')";
+    let res = getMeRandomElements(images, 4);
+    let j = 0;//Счетчик ответов
+    let i = getRandomInt();//Выбор правильного номера ответа
+    art_img.style.backgroundImage = "url('src/images/full/"+images[idQuestion]['imageNum']+"full.jpg')";
     answers_art.forEach((answer_art)=>{
         if(i==j){
             answer_art.textContent = images[idQuestion]['author'];
@@ -68,16 +68,16 @@ export function changeQuestion(idQuestion){
 //Функция смены вопроса для картин
 export function changeQuestionpic(idQuestion){
     console.log(idQuestion);
-    var res = getMeRandomElements(images, 4);
-    var j = 0;//Счетчик ответов
-    var i = getRandomInt();//Выбор правильного номера ответа
+    let res = getMeRandomElements(images, 4);
+    let j = 0;//Счетчик ответов
+    let i = getRandomInt();//Выбор правильного номера ответа
     question_txt.textContent = "Какую картину написал "+images[idQuestion]['author']+"?";
     question_txt.innerHTML = "Какую картину написал "+images[idQuestion]['author']+"?";
     answers_img.forEach((answer_img)=>{
         if(i==j){
-            answer_img.style.backgroundImage = "url('assets/images/full/"+images[idQuestion]['imageNum']+"full.jpg')";
+            answer_img.style.backgroundImage = "url('src/images/full/"+images[idQuestion]['imageNum']+"full.jpg')";
         }else{
-            answer_img.style.backgroundImage = "url('assets/images/full/"+res[j]['imageNum']+"full.jpg')";
+            answer_img.style.backgroundImage = "url('src/images/full/"+res[j]['imageNum']+"full.jpg')";
         }
         j++
     })
@@ -87,9 +87,9 @@ export function changeQuestionpic(idQuestion){
 
 //Выбор случайных элементов
 export let getMeRandomElements = function(sourceArray, neededElements) {
-    var result = [];
-    for (var i = 0; i < neededElements; i++) {
-    var index = Math.floor(Math.random() * sourceArray.length);
+    let result = [];
+    for (let i = 0; i < neededElements; i++) {
+    let index = Math.floor(Math.random() * sourceArray.length);
         if(index==questions_art){
             i--;
         }else{
@@ -104,18 +104,18 @@ for (let card_done_art of cards_done_art) {
     
     card_done_art.addEventListener('click', function(){
         chosen_card_art = parseInt(card_done_art.id);
-        for(var i = 0; i<=10;i++)
+        for(let i = 0; i<=10;i++)
         {
             pagination_items[i].classList.remove("pagination__item__correct");
             pagination_items[i].classList.remove("pagination__item__incorrect")
             pagination_items[i].classList.add("pagination__item__null")
             
         }
-        var res = getMeRandomElements(images, 4);
+        let res = getMeRandomElements(images, 4);
         questions_art = parseInt(idBtn)-10;
-        var j = 0;//Счетчик ответов
-        var i = getRandomInt();//Выбор правильного номера ответа
-        art_img.style.backgroundImage = "url('assets/images/full/"+images[questions_art]['imageNum']+"full.jpg')";
+        let j = 0;//Счетчик ответов
+        let i = getRandomInt();//Выбор правильного номера ответа
+        art_img.style.backgroundImage = "url('src/images/full/"+images[questions_art]['imageNum']+"full.jpg')";
 
         answers_art.forEach((answer_art)=>{
             if(i==j){
@@ -132,24 +132,24 @@ for (let card_done_pic of cards_done_pic) {
     
     card_done_pic.addEventListener('click', function(){
         chosen_card_pic = parseInt(card_done_pic.id);
-        for(var i = 0; i<=10;i++)
+        for(let i = 10; i<20;i++)
         {
             pagination_items[i].classList.remove("pagination__item__correct");
             pagination_items[i].classList.remove("pagination__item__incorrect")
             pagination_items[i].classList.add("pagination__item__null")
             
         }
-        var res = getMeRandomElements(images, 4);
+        let res = getMeRandomElements(images, 4);
         questions_pic = parseInt(idBtn)-10;
-        var j = 0;//Счетчик ответов
-        var i = getRandomInt();//Выбор правильного номера ответа
+        let j = 0;//Счетчик ответов
+        let i = getRandomInt();//Выбор правильного номера ответа
         question_txt.textContent = "Какую картину написал "+images[questions_pic]['author']+"?";
         question_txt.innerHTML ="Какую картину написал "+images[questions_pic]['author']+"?";
         answers_img.forEach((answer_img)=>{
             if(i==j){
-                answer_img.style.backgroundImage = "url('assets/images/full/"+images[questions_pic]['imageNum']+"full.jpg')";
+                answer_img.style.backgroundImage = "url('src/images/full/"+images[questions_pic]['imageNum']+"full.jpg')";
             }else{
-                answer_img.style.backgroundImage = "url('assets/images/full/"+res[j]['imageNum']+"full.jpg')";
+                answer_img.style.backgroundImage = "url('src/images/full/"+res[j]['imageNum']+"full.jpg')";
             }
             j++
         })
@@ -165,14 +165,14 @@ export function showPopup(flag){
     }
     //Функция появления Попапа для писателей
     if(idBtn<=120){
-        popup_picture.style.backgroundImage = "url('assets/images/full/"+images[questions_art]['imageNum']+"full.jpg')";
+        popup_picture.style.backgroundImage = "url('src/images/full/"+images[questions_art]['imageNum']+"full.jpg')";
         popup_picture_name.textContent = images[questions_art]['name'];
         popup_picture_author.textContent = images[questions_art]['author'];
         popup_picture_year.textContent = images[questions_art]['year'];
         overlay_popup.classList.add('overlay__show')
         popup_inner.classList.add('popup__show')
     }else{//Функция появления Попапа для картин
-        popup_picture.style.backgroundImage = "url('assets/images/full/"+images[questions_pic]['imageNum']+"full.jpg')";
+        popup_picture.style.backgroundImage = "url('src/images/full/"+images[questions_pic]['imageNum']+"full.jpg')";
         popup_picture_name.textContent = images[questions_pic]['name'];
         popup_picture_author.textContent = images[questions_pic]['author'];
         popup_picture_year.textContent = images[questions_pic]['year'];
@@ -230,10 +230,10 @@ popup_button.addEventListener('click', function(){
     //Функция Попапа для писателей
     if(idBtn<=120){
         if(questions_art+10-parseInt(idBtn)==9){
-            var flag_change_cat=false;
+            let flag_change_cat=false;
             main_screen.style.left = '-2000px';
             popup_inner.classList.remove('popup__show');
-            for(var i = questions_art-10;i<=questions_art;i++){
+            for(let i = questions_art-10;i<=questions_art;i++){
                 if(correct_answers[i]==true){
                     flag_change_cat = true;
                 }
@@ -257,10 +257,10 @@ popup_button.addEventListener('click', function(){
         //Функция кнопки Попапа для картин
     }else{
         if(questions_pic+10-parseInt(idBtn)==9){
-            var flag_change_cat=false;
+            let flag_change_cat=false;
             main_screen.style.left = '-2000px';
             popup_inner.classList.remove('popup__show');
-            for(var i = questions_pic-10;i<=questions_pic;i++){
+            for(let i = questions_pic-10;i<=questions_pic;i++){
                 if(correct_answers[i]==true){
                     flag_change_cat = true;
                 }
