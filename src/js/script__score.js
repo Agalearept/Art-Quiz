@@ -1,6 +1,6 @@
 import {images} from "./images.js";
 import { btns_score, idScoreBtn } from "./script__change__content.js";
-import { correct_answers } from "./script__questions.js";
+import { correctAnswers, correct_answers } from "./script__questions.js";
 
 //Картинки в рекордах
 let cards_record_art = document.querySelectorAll('.card__record__art');
@@ -18,7 +18,7 @@ btns_score.forEach((btn_score) => {
         let step = 0;
         let i = 0;
         for(i = idScoreBtn - 10; i < idScoreBtn; i++){
-            if(correct_answers[i] == true){
+            if(correctAnswers[i] == true){
                 artists_record_imgs[step].style.filter = "none";
             }else{
                 artists_record_imgs[step].style.filter = "grayscale(100%)";

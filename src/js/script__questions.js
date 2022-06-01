@@ -201,6 +201,10 @@ answers_art.forEach((answer_art)=>{
             pagination_items[questions_art+10-parseInt(idBtn)].classList.replace("pagination__item__incorrect", "pagination__item__correct")
         }else{
             flag = false;
+            if((correctAnswers[images[questions_art]['imageNum']] != true) || (correctAnswers[images[questions_art]['imageNum']] != false)){
+                correctAnswers[images[questions_art]['imageNum']] = false;
+                localStorage.setItem('correctAns', JSON.stringify(correctAnswers));
+            }
             pagination_items[questions_art+10-parseInt(idBtn)].classList.replace("pagination__item__null", "pagination__item__incorrect")
         }
         showPopup(flag);
@@ -221,9 +225,6 @@ answers_img.forEach((answer_pic)=>{
             pagination_items[questions_pic+20-parseInt(idBtn)].classList.replace("pagination__item__incorrect", "pagination__item__correct")
         }else{
             flag = false;
-            if(correct_answers[images[questions_pic]['imageNum']] != true){
-                correct_answers[images[questions_pic]['imageNum']] = false;
-            }
             pagination_items[questions_pic+20-parseInt(idBtn)].classList.replace("pagination__item__null", "pagination__item__incorrect")
         }
         showPopup(flag);
@@ -239,20 +240,12 @@ popup_button.addEventListener('click', function(){
     //Функция Попапа для писателей
     if(idBtn<=120){
         if(questions_art+10-parseInt(idBtn)==9){
-            let flag_change_cat=false;
             main_screen.style.left = '-2000px';
             popup_inner.classList.remove('popup__show');
-            for(let i = questions_art-10;i<=questions_art;i++){
-                if(correct_answers[i]==true){
-                    flag_change_cat = true;
-                }
-            }
-            if(flag_change_cat==true){
-                for (let card_art of cards_art) {
-                    if(card_art.id == chosen_card_art+10){
-                         card_art.classList.add('card__done');
-                         card_art.querySelector('.artists__img').style.filter = "none";
-                    }
+            for (let card_art of cards_art) {
+                if(card_art.id == chosen_card_art+10){
+                        card_art.classList.add('card__done');
+                        card_art.querySelector('.artists__img').style.filter = "none";
                 }
             }
             setTimeout(() => togglehidden(cat_art, quest_art), 1000); 
@@ -266,20 +259,12 @@ popup_button.addEventListener('click', function(){
         //Функция кнопки Попапа для картин
     }else{
         if(questions_pic+10-parseInt(idBtn)==9){
-            let flag_change_cat=false;
             main_screen.style.left = '-2000px';
             popup_inner.classList.remove('popup__show');
-            for(let i = questions_pic-10;i<=questions_pic;i++){
-                if(correct_answers[i]==true){
-                    flag_change_cat = true;
-                }
-            }
-            if(flag_change_cat==true){
-                for (let card_pic of cards_pic) {
-                    if(card_pic.id == chosen_card_pic+10){
-                         card_pic.classList.add('card__done');
-                         card_pic.querySelector('.pictures__img').style.filter = "none";
-                    }
+            for (let card_pic of cards_pic) {
+                if(card_pic.id == chosen_card_pic+10){
+                        card_pic.classList.add('card__done');
+                        card_pic.querySelector('.pictures__img').style.filter = "none";
                 }
             }
             setTimeout(() => togglehidden(cat_pic, quest_pic), 1000); 
