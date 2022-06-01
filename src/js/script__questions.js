@@ -195,7 +195,6 @@ answers_art.forEach((answer_art)=>{
                 correctAnswers[images[questions_art]['imageNum']] = true;
                 localStorage.setItem('correctAns', JSON.stringify(correctAnswers));
                 cards_score[idBtn/10-1].textContent = parseInt(cards_score[idBtn/10-1].textContent)+1;
-
             }
             pagination_items[questions_art+10-parseInt(idBtn)].classList.replace("pagination__item__null", "pagination__item__correct");
             pagination_items[questions_art+10-parseInt(idBtn)].classList.replace("pagination__item__incorrect", "pagination__item__correct")

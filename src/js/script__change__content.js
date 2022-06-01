@@ -7,7 +7,9 @@ let to_pic_cat = document.querySelector(".topictcat");
 let btns_home = document.querySelectorAll(".btn__home");
 let btns_categories = document.querySelectorAll(".btn__categories");
 export let btns_score = document.querySelectorAll(".btn__score");
-
+export let correct_answers = localStorage.getItem('correctAns') ? JSON.parse(localStorage.getItem('correctAns')) : [];//Количество правильных ответов
+localStorage.setItem('correctAns', JSON.stringify(correct_answers));
+export let correctAnswers = JSON.parse(localStorage.getItem('correctAns'));
 // Экраны
 export let main_screen = document.querySelector(".container");//Основной контейнер
 let choise_treo = document.getElementById('choise_treo');//Основной экран
@@ -31,12 +33,18 @@ export function togglehidden(first, second){
 }
 
 export function enableCardsArt(){
-    
+    for (let card_done_art of cards_done_art) {
+        if((correctAnswers[card_done_art.id-11] == true) || correctAnswers[card_done_art.id-11] == false){
+            card_done_art.classList.add('card__done');
+            card_done_art.querySelector('.artists__img').style.filter = "none";
+        }
+    }
 }
 
 // Функция кнопки с писателями
 to_art_cat.addEventListener('click', function(){
     main_screen.style.left = '-2000px';
+    enableCardsArt();
     setTimeout(() => togglehidden(cat_art, choise_treo), 1000);
 });
 
